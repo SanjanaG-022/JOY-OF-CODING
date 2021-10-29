@@ -1,0 +1,35 @@
+#include<stdio.h>
+#include<string.h>
+void main()
+{
+    char a[50],ch[50];
+    int j,i,k=0,l,count=0,c[50];
+    printf("Enter the string:");
+    scanf("%[^\n]%*c",a);
+    for(i=0;i<strlen(a);i++)
+    {   
+        if(a[i]==' ')
+          continue;
+        for(j=0;j<strlen(a);j++)
+        {
+          if(a[i]==a[j])
+          {
+            count++;
+          }
+        }
+        c[k]=count;
+        ch[k]=a[i];
+        k++;
+        count=0;
+    }
+    int greater=c[0];
+    for(i=1;i<k;i++)
+    {
+        if(c[i]>greater)
+        {
+                greater=c[i];
+                l=i;
+        }
+    }
+    printf("%c with count %d",ch[l],greater);
+}
